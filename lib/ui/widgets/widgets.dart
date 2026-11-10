@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'theme.dart';
+import '../../core/theme/../../core/theme/theme.dart';
 
 /// Avatar circular con iniciales sobre un color derivado.
 class InitialsAvatar extends StatelessWidget {

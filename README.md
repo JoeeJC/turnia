@@ -51,11 +51,11 @@ Este es un **prototipo navegable** con datos mock en memoria: todas las pantalla
 ```
 lib/
 ├── main.dart                 # App + rutas + helpers de formato
-├── models.dart               # Modelos (Service, Client, Appointment, DaySchedule, BusinessProfile)
-├── app_state.dart            # Estado global en memoria (AppState + AppScope) y datos mock
-├── theme.dart                # Paleta de marca y ThemeData (con modo oscuro)
-├── widgets.dart              # Widgets compartidos (avatar, tarjetas, badges, QR ficticio)
-├── appointment_tile.dart     # Fila de turno reutilizable
+├── ../../models/models.dart               # Modelos (Service, Client, Appointment, DaySchedule, BusinessProfile)
+├── ../../state/app_state.dart            # Estado global en memoria (AppState + AppScope) y datos mock
+├── ../../core/theme/theme.dart                # Paleta de marca y ThemeData (con modo oscuro)
+├── p../widgets/widgets.dart              # Widgets compartidos (avatar, tarjetas, badges, QR ficticio)
+├── ../widgets/appointment_tile.dartrt     # Fila de turno reutilizable
 └── screens/
     ├── splash_screen.dart
     ├── login_screen.dart

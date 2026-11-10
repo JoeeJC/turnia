@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../app_state.dart';
-import '../theme.dart';
+import '../../state/app_state.dart';
+import '../../core/theme/theme.dart';
 import 'dashboard_screen.dart';
 import 'agenda_screen.dart';
 import 'servicios_screen.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'models.dart';
-import 'theme.dart';
-import 'widgets.dart';
+import '../../../../models/models.dart';
+import '../../core/theme/../../core/theme/theme.dart';
+import 'p../widgets/widgets.dart';
 
 /// Fila de turno reutilizada en el Dashboard y la Agenda.
 class AppointmentTile extends StatelessWidget {

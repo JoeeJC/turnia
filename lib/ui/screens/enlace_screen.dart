@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../app_state.dart';
-import '../theme.dart';
-import '../widgets.dart';
+import '../../state/app_state.dart';
+import '../../../../../core/theme/../../core/theme/theme.dart';
+import '../../../../widgets/p../widgets/widgets.dart';
 
 /// Pantalla 13 · Compartir mi enlace con QR ficticio.
 class EnlaceScreen extends StatelessWidget {

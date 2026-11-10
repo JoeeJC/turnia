@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../theme.dart';
+import '../../../../../core/theme/../../core/theme/theme.dart';
 
 /// Pantalla 1 · Splash con logo de Turnia y carga inicial.
 class SplashScreen extends StatefulWidget {

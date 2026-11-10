@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import '../app_state.dart';
-import '../appointment_tile.dart';
-import '../main.dart';
-import '../theme.dart';
-import '../widgets.dart';
+import '../../state/app_state.dart';
+import '../../../../widgets/../widgets/appointment_tile.dartrt';
+import '../../../../../main.dart';
+import '../../../../../core/theme/../../core/theme/theme.dart';
+import '../../../../widgets/p../widgets/widgets.dart';
 
 /// Pantalla 5 · Dashboard / Inicio.
 class DashboardScreen extends StatelessWidget {

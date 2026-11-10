@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import '../app_state.dart';
-import '../main.dart';
-import '../models.dart';
-import '../theme.dart';
-import '../widgets.dart';
+import '../../state/app_state.dart';
+import '../../../../../main.dart';
+import '../../../../../../../models/models.dart';
+import '../../../../../core/theme/../../core/theme/theme.dart';
+import '../../../../widgets/p../widgets/widgets.dart';
 
 /// Página pública de reservas (la que ven las clientas por el enlace).
 class ReservasPublicasScreen extends StatelessWidget {

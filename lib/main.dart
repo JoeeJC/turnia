@@ -1,22 +1,31 @@
 import 'package:flutter/material.dart';
-import 'app_state.dart';
-import 'theme.dart';
-import 'screens/splash_screen.dart';
-import 'screens/login_screen.dart';
-import 'screens/registro_screen.dart';
-import 'screens/config_inicial_screen.dart';
-import 'screens/app_shell.dart';
-import 'screens/turno_detail_screen.dart';
-import 'screens/servicio_form_screen.dart';
-import 'screens/horarios_screen.dart';
-import 'screens/cliente_detail_screen.dart';
-import 'screens/enlace_screen.dart';
-import 'screens/reservas_publicas_screen.dart';
-import 'screens/perfil_screen.dart';
-import 'screens/config_screen.dart';
-import 'models.dart';
+
+// Estado y Repositorios
+import '../../state/app_state.dart';
+
+// Tema visual
+import 'core/theme/../../core/theme/theme.dart';
+
+// Modelos necesarios para argumentos de navegación
+import 'models/turno.dart';
+
+// Pantallas del sistema
+import 'ui/screens/splash_screen.dart';
+import 'ui/screens/login_screen.dart';
+import 'ui/screens/registro_screen.dart';
+import 'ui/screens/config_inicial_screen.dart';
+import 'ui/screens/app_shell.dart';
+import 'ui/screens/turno_detail_screen.dart';
+import 'ui/screens/servicio_form_screen.dart';
+import 'ui/screens/horarios_screen.dart';
+import 'ui/screens/cliente_detail_screen.dart';
+import 'ui/screens/enlace_screen.dart';
+import 'ui/screens/reservas_publicas_screen.dart';
+import 'ui/screens/perfil_screen.dart';
+import 'ui/screens/config_screen.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const TurniaApp());
 }
 
@@ -28,7 +37,19 @@ class TurniaApp extends StatefulWidget {
 }
 
 class _TurniaAppState extends State<TurniaApp> {
-  final AppState _state = AppState();
+  late final AppState _state;
+
+  @override
+  void initState() {
+    super.initState();
+    _state = AppState();
+  }
+
+  @override
+  void dispose() {
+    _state.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -64,14 +85,26 @@ class _TurniaAppState extends State<TurniaApp> {
   }
 }
 
-/// Utilidades de formato reutilizadas por las pantallas.
+// ========================================================
+// UTILIDADES DE FORMATO REUTILIZADAS POR LAS PANTALLAS
+// ========================================================
+
 String greetingForHour(int hour) {
   if (hour < 12) return 'Buenos días';
   if (hour < 19) return 'Buenas tardes';
   return 'Buenas noches';
 }
 
-const List<String> weekdayShort = ['LUN', 'MAR', 'MIÉ', 'JUE', 'VIE', 'SÁB', 'DOM'];
+const List<String> weekdayShort = [
+  'LUN',
+  'MAR',
+  'MIÉ',
+  'JUE',
+  'VIE',
+  'SÁB',
+  'DOM',
+];
+
 const List<String> weekdayLong = [
   'Lunes',
   'Martes',
@@ -81,6 +114,7 @@ const List<String> weekdayLong = [
   'Sábado',
   'Domingo',
 ];
+
 const List<String> monthNames = [
   'Enero',
   'Febrero',
@@ -96,12 +130,21 @@ const List<String> monthNames = [
   'Diciembre',
 ];
 
-String dayLabel(DateTime d) => '${weekdayLong[d.weekday - 1]} ${d.day.toString().padLeft(2, '0')}/${d.month.toString().padLeft(2, '0')}';
+String dayLabel(DateTime d) =>
+    '${weekdayLong[d.weekday - 1]} ${d.day.toString().padLeft(2, '0')}/${d.month.toString().padLeft(2, '0')}';
 
-String shortDayLabel(DateTime d) => '${d.day.toString().padLeft(2, '0')}/${d.month.toString().padLeft(2, '0')}';
+String shortDayLabel(DateTime d) =>
+    '${d.day.toString().padLeft(2, '0')}/${d.month.toString().padLeft(2, '0')}';
 
-/// Ruta de navegación hacia un turno concreto.
+// ========================================================
+// ARGUMENTOS DE NAVEGACIÓN
+// ========================================================
+
+/// Alias o clase para permitir la navegación hacia el detalle de un turno
 class TurnoArgs {
-  final Appointment appointment;
+  final Turno appointment;
   const TurnoArgs(this.appointment);
 }
+
+// Typedef para compatibilidad si alguna pantalla aún usa el nombre anterior "Appointment"
+typedef Appointment = Turno;
